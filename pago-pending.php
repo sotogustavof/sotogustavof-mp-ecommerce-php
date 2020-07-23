@@ -230,7 +230,7 @@
                             <div class="column small-12 as-search-results-tiles as-search-results-width">
 
                                 <div style="background-color: #fcf3cf; border-radius: 6px; margin: 40px; padding: 10px;">
-                                    <h2>Pago pendiente de aprobación.</h2>
+                                    <h2>Pago pendiente.</h2>
                                     <hr>
                                     <b>ID pago:</b> <?php echo $paymentID ?><br>
                                     <b>Estado:</b> <?php echo $status ?><br>
