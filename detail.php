@@ -14,6 +14,7 @@
   
   // Datos adicionales
   $preference->external_reference = "gustavo.soto@umbralweb.com.ar";
+  $preference->notification_url = "https://sotogustavof-mp-ecommerce-php.herokuapp.com/";
   
   // Páginas de retorno
   $preference->back_urls = array(
