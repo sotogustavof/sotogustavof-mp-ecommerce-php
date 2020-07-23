@@ -17,9 +17,9 @@
   
   // Páginas de retorno
   $preference->back_urls = array(
-      "success" => "http://sotogustavof-mp.uw/pago-success.php",
-      "failure" => "http://sotogustavof-mp.uw/pago-failure.php",
-      "pending" => "http://sotogustavof-mp.uw/pago-pending.php"
+      "success" => "https://".$_SERVER['HTTP_HOST']."/pago-success.php",
+      "failure" => "https://".$_SERVER['HTTP_HOST']."/pago-failure.php",
+      "pending" => "https://".$_SERVER['HTTP_HOST']."/pago-pending.php"
   );
   $preference->auto_return = "approved";
   
@@ -43,7 +43,7 @@
   $item->id = '1234';
   $item->title = $_POST['title'];
   $item->description = '​Dispositivo móvil de Tienda e-commerce';
-  $item->picture_url = 'http://'.$_SERVER['HTTP_HOST'].'/'.$_POST['img'];
+  $item->picture_url = 'https://'.$_SERVER['HTTP_HOST'].'/'.$_POST['img'];
   $item->quantity = 1;
   $item->unit_price = $_POST['price'];
   $preference->items = array($item);
