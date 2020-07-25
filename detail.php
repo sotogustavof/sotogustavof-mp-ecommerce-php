@@ -14,7 +14,7 @@
   
   // Datos adicionales
   $preference->external_reference = "gustavo.soto@umbralweb.com.ar";
-  $preference->notification_url = "https://sotogustavof-mp-ecommerce-php.herokuapp.com/mpwh";
+  $preference->notification_url = "https://sotogustavof-mp-ecommerce-php.herokuapp.com";
   
   // Páginas de retorno
   $preference->back_urls = array(
@@ -66,7 +66,7 @@
   // Código de testeo
   // Objeto para crear la estructura json
   $o->external_reference = "gustavo.soto@umbralweb.com.ar";
-  $o->notification_url = "https://sotogustavof-mp-ecommerce-php.herokuapp.com/";
+  $o->notification_url = "https://sotogustavof-mp-ecommerce-php.herokuapp.com";
   $o->back_urls = array(
       "success" => "https://".$_SERVER['HTTP_HOST']."/pago-success.php",
       "failure" => "https://".$_SERVER['HTTP_HOST']."/pago-failure.php",
