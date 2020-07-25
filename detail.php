@@ -46,7 +46,7 @@
   $item->description = "​Dispositivo móvil de Tienda e-commerce";
   $item->picture_url = "https://".$_SERVER['HTTP_HOST']."/".$_POST['img'];
   $item->quantity = 1;
-  $item->unit_price = $_POST['price'];
+  $item->unit_price = (float) $_POST['price'];
   $preference->items = array($item);
   
   // Métodos de pago
@@ -241,6 +241,8 @@
                                         <script src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js" data-preference-id="<?php echo $preference->id; ?>" data-button-label="Pagar la compra"></script>
                                     </form>
                                     <p>&nbsp;</p>
+                                    <?php echo $preference->status; ?>
+                                    <?php echo '<br><br>'; ?>
                                     <?php echo $jsonPreference; ?>
                                 </div>
                             </div>
