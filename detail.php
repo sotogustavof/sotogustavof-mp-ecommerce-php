@@ -237,11 +237,11 @@
                                             <?php echo "$" . $_POST['unit'] ?>
                                         </h3>
                                     </div>
-                                    <form action="procesar-pago.php" method="get">
+                                    <!-- <form action="procesar-pago.php" method="get">
                                         <script src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js" data-preference-id="<?php echo $preference->id; ?>" data-button-label="Pagar la compra"></script>
-                                    </form>
+                                    </form> -->
+                                    <a href="<?php echo $preference->init_point; ?>">Pagar la compra</a>
                                     <p>&nbsp;</p>
-                                    <?php echo $preference->status; ?>
                                     <?php echo '<br><br>'; ?>
                                     <?php echo $jsonPreference; ?>
                                 </div>
