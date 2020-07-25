@@ -83,9 +83,9 @@
   $o->items = array(
       array(
           "id" => "1234",
-          "title" => $titleItem,
+          "title" => $_POST['title'],
           "description" => "Dispositivo móvil de Tienda e-commerce",
-          "picture_url" => "http://".$_SERVER['HTTP_HOST']."/"."imagen.jpg",
+          "picture_url" => "http://".$_SERVER['HTTP_HOST']."/".$_POST['img'],
           "quantity" => 1,
           "unit_price" => 15000
       )
