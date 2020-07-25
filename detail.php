@@ -87,7 +87,7 @@
           "description" => "Dispositivo móvil de Tienda e-commerce",
           "picture_url" => "https://".$_SERVER['HTTP_HOST']."/".$_POST['img'],
           "quantity" => 1,
-          "unit_price" => $_POST['price']
+          "unit_price" => (float) $_POST['price']
       )
   );
   $o->payment_methods = array(
