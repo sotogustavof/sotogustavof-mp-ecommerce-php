@@ -30,21 +30,21 @@
   $payer->surname = "Lando";
   $payer->email = "test_user_63274575@testuser.com";
   $payer->phone = array(
-      "area_code" => "11",
-      "number" => "22223333"
+      "area_code" => 11,
+      "number" => 22223333
   );
   $payer->address = array(
       "street_name" => "False",
       "street_number" => 123,
-      "zip_code" => "1111"
+      "zip_code" => 1111
   );
   
   // Crear item en Preference
   $item = new MercadoPago\Item();
-  $item->id = '1234';
+  $item->id = "1234";
   $item->title = $_POST['title'];
-  $item->description = '​Dispositivo móvil de Tienda e-commerce';
-  $item->picture_url = 'https://'.$_SERVER['HTTP_HOST'].'/'.$_POST['img'];
+  $item->description = "​Dispositivo móvil de Tienda e-commerce";
+  $item->picture_url = "https://".$_SERVER['HTTP_HOST']."/".$_POST['img'];
   $item->quantity = 1;
   $item->unit_price = $_POST['price'];
   $preference->items = array($item);
