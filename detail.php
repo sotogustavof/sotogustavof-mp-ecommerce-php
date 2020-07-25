@@ -85,9 +85,9 @@
           "id" => "1234",
           "title" => $_POST['title'],
           "description" => "Dispositivo móvil de Tienda e-commerce",
-          "picture_url" => "http://".$_SERVER['HTTP_HOST']."/".$_POST['img'],
+          "picture_url" => "https://".$_SERVER['HTTP_HOST']."/".$_POST['img'],
           "quantity" => 1,
-          "unit_price" => 15000
+          "unit_price" => $_POST['price']
       )
   );
   $o->payment_methods = array(
