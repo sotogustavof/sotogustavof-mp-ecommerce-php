@@ -62,6 +62,46 @@
   
   // Salvar
   $preference->save();
+
+  // Código de testeo
+  // Objeto para crear la estructura json
+  $o->external_reference = "gustavo.soto@umbralweb.com.ar";
+  $o->notification_url = "https://sotogustavof-mp-ecommerce-php.herokuapp.com/";
+  $o->back_urls = array(
+      "success" => "https://".$_SERVER['HTTP_HOST']."/pago-success.php",
+      "failure" => "https://".$_SERVER['HTTP_HOST']."/pago-failure.php",
+      "pending" => "https://".$_SERVER['HTTP_HOST']."/pago-pending.php"
+  );
+  $o->auto_return = "approved";
+  $o->payer = array(
+      "name" => "Lalo",
+      "surname" => "Lando",
+      "email" => "test_user_63274575@testuser.com",
+      "phone" => array("area_code" => 11, "number" => 22223333),
+      "address" => array("street_name" => "False", "street_number" => 123, "zip_code" => 1111)
+  );
+  $o->items = array(
+      array(
+          "id" => "1234",
+          "title" => $titleItem,
+          "description" => "Dispositivo móvil de Tienda e-commerce",
+          "picture_url" => "http://".$_SERVER['HTTP_HOST']."/"."imagen.jpg",
+          "quantity" => 1,
+          "unit_price" => 15000
+      )
+  );
+  $o->payment_methods = array(
+      "exclude_payment_methods" => array(
+          array("id" => "amex")
+      ),
+      "exclude_payment_types" => array(
+          array("id" => "atm")
+      ),
+      "installments" => 6
+  );
+  
+  // Crear json
+  $jsonPreference = json_encode($o, JSON_UNESCAPED_UNICODE);
 ?>
 <!DOCTYPE html>
 <html class="supports-animation supports-columns svg no-touch no-ie no-oldie no-ios supports-backdrop-filter as-mouseuser" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -200,7 +240,8 @@
                                     <form action="procesar-pago.php" method="get">
                                         <script src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js" data-preference-id="<?php echo $preference->id; ?>" data-button-label="Pagar la compra"></script>
                                     </form>
-                                    
+                                    <p>&nbsp;</p>
+                                    <?php echo $jsonPreference; ?>
                                 </div>
                             </div>
                         </div>
